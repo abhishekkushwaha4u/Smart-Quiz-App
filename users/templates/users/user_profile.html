@@ -19,12 +19,12 @@ Role : {{profile.6}}
 </div>
 
 {% if profile.6 == 'student' %}
-<a href="users:students_quiz">Quizzes</a>
-<a href="users:students_results">Results</a>
+<a href="quiz:students_quiz">Quizzes</a>
+<a href="quiz:students_results">Results</a>
 {% endif %}
 {% if profile.6 == 'teacher' %}
-<a href="users:quiz_taken">Quizzes taken</a>
-<a href="users:results_of_quiz">Results of quizzes</a>
+<a href="quiz:quiz_created">Quizzes created</a>
+<a href="quiz:results_of_quiz">Results of quizzes</a>
 {% endif %}
 
 </body>

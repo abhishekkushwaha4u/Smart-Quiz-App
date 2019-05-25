@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 import random
 import string
 from django.contrib import messages
@@ -37,6 +37,10 @@ def createQuiz(request):
                     return render(request, 'Quiz/createQuiz.html', {'form': form})
             else:
                 return HttpResponse("Response to students denied!")
-        else:
-            return redirect("/accounts/login")
+    else:
+        return redirect("/accounts/login")
+
+# def quizCreated(request):
+#     k = quiz.objects.filter(role="teacher")
+
                             

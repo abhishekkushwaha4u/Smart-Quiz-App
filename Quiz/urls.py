@@ -5,7 +5,5 @@ app_name = "quiz"
 
 urlpatterns = [
     path('quiz/',createQuiz, name="createQuiz"),
-    
-
-
+    #path('quiz_created', quizCreated, name="quiz_created"),
 ]
