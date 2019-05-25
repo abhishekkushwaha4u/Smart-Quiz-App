@@ -14,6 +14,8 @@ Registration Number: {{ profile.2}}<br>
 Email id : {{ profile.5}}<br>
 Phone Number : {{ profile.3}}<br>
 Role : {{profile.6}}
+
+
 </div>
 
 {% if profile.6 == 'student' %}
@@ -21,8 +23,8 @@ Role : {{profile.6}}
 <a href="users:students_results">Results</a>
 {% endif %}
 {% if profile.6 == 'teacher' %}
-<a href="users:quiz_taken">Quizzes</a>
-<a href="users:results_of_quiz">Results of quiz</a>
+<a href="users:quiz_taken">Quizzes taken</a>
+<a href="users:results_of_quiz">Results of quizzes</a>
 {% endif %}
 
 </body>

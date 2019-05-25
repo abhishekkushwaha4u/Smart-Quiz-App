@@ -28,9 +28,15 @@ def profile_create(request):
 def user_profile(request):
         if request.user.is_authenticated:
                 k = Profile.objects.get(email=request.user.email)
-                print(k)
-                profile = [k.first_name,k.last_name,k.registration_number,k.phone_number,k.profile_picture,k.email,k.role]
-                return render(request,"users/user_profile.html",context={"profile":profile})
+                if k.role = "student" and k.registration_number!="":
+                        profile = [k.first_name,k.last_name,k.registration_number,k.phone_number,k.profile_picture,k.email,k.role]
+                        return render(request,"users/user_profile.html",context={"profile":profile})
+                elif k.role = "teacher" and k.registration_number==" ":
+                        profile = [k.first_name, k.last_name, k.registration_number,k.phone_number, k.profile_picture, k.email, k.role]
+                        return render(request, "users/user_profile.html", context={"profile": profile})
+                else:
+                        return HttpResponse("Error in user_profile handling!")
+
         else:
                 return redirect("/accounts/login")
                 
