@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Profile Page</title>
+</head>
+<body>
+<div style="text-align:center">
+<img src="{{ profile.4.url}}" width="200" height="200" ><br>
+Hello ! {{ profile.0 }} {{ profile.1}}<br>
+First Name : {{ profile.0 }} <br>
+Last Name : {{ profile.1}}<br>
+{% if profile.2 %}
+Registration Number: {{ profile.2}}<br>
+{% endif %}
+Email id : {{ profile.5}}<br>
+Phone Number : {{ profile.3}}<br>
+Role : {{profile.6}}
+</div>
+
+{% if profile.6 == 'student' %}
+<a href="users:students_quiz">Quizzes</a>
+<a href="users:students_results">Results</a>
+{% endif %}
+{% if profile.6 == 'teacher' %}
+<a href="users:quiz_taken">Quizzes</a>
+<a href="users:results_of_quiz">Results of quiz</a>
+{% endif %}
+
+</body>
+</html>

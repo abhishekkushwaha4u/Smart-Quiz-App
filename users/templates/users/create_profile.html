@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>Profile Page</title>
+</head>
+<body>
+<form method="POST" action={% url 'users:profile_create' %}>
+{% csrf_token %}
+First Name : <input type="text" name="First Name"><br>
+Last Name : <input type="text" name="Last Name"><br>
+Registration Number<input type="text" name="Registration Number">(*leave out if you are a teacher)<br>
+Email id : {{ user.email }}<br>
+Profile Picture : <input type="file" accept=".jpg,.jpeg,.png" name="Profile Picture"><br>
+Phone Number : <input type="number" name="Phone Number"><br>
+<p>Select user role:</p>
+<div>
+  <input type="radio" id="student" name="role" value="student" checked>
+  <label for="student">Student</label>
+</div>
+<div>
+  <input type="radio" id="teacher" name="role" value="teacher">
+  <label for="teacher">Teacher</label>
+</div>
+<input type="submit" value="Submit">
+</form>
+</html>
